@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 
-def index
+  def index
     @tasks = Task.all
   end
 
@@ -21,9 +21,10 @@ def index
     else
       flash.now[:danger] = 'Task が投稿されませんでした'
       render :new
-  end 
+    end 
+  end  
       
-def edit
+  def edit
       @task = Task.find(params[:id])
   end
 
@@ -52,4 +53,10 @@ def edit
 
 end
 
-end
+private
+
+  # Strong Parameter
+  def task_params
+    params.require(:task).permit(:content)
+  end
+
