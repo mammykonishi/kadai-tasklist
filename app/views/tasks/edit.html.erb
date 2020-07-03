@@ -4,7 +4,11 @@
 
 <%= form_with(model: @task, local: true) do |f| %>
 
-  
+<%= f.label :status, 'ステータス' %>
+  <%= f.text_field :status %>  
+
+
+
 <%= f.label :content, 'タスク' %>
 
   
