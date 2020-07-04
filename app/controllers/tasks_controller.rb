@@ -52,8 +52,6 @@ class TasksController < ApplicationController
       
   end
 
-end
-
 private
 
   # Strong Parameter
@@ -61,4 +59,4 @@ private
     params.require(:task).permit(:content, :status
     )
   end
-
+end
